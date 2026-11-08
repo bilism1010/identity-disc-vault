@@ -17,6 +17,10 @@
 [![Zero-Trust](https://img.shields.io/badge/SECRETS-ZERO%20ON--DISK%20EXPOSURE-00e5ff?style=for-the-badge&labelColor=03060f)](#performance-targets)
 
 <p align="center">
+  <img src="assets/identity-disc.png" alt="Identity Disc Vault Conceptual Visualization" width="480" />
+</p>
+
+<p align="center">
   <b>Developer secret injector and cloud bootstrap CLI enforcing zero-trust hardware key (FIDO2/U2F/YubiKey) and Passkey signature verification.</b><br>
   <i>Inspired by the TRON Identity Disc: your cryptographic essence, your immutable signature, and absolute control over every privileged execution.</i>
 </p>
