@@ -27,6 +27,20 @@
 
 ---
 
+## 🛠️ Physical Realization & Hardware Architecture
+
+We have engineered a realistic, open-source physical realization of the TRON Identity Disc as a 3D-printable FIDO2/WebAuthn PRF hardware security vault:
+
+<p align="center">
+  <img src="assets/technical-cutaway.png" alt="Identity Disc Technical Cutaway Drawing" width="720" />
+</p>
+
+- **Interactive 3D Models**: Production-ready [`.STL`](file:///Users/bill/src/research/systems-programming/indentity-disc-vault/hardware/cad/identity_disc_assembly.stl) and [`.OBJ`](file:///Users/bill/src/research/systems-programming/indentity-disc-vault/hardware/cad/identity_disc_assembly.obj) files for base chassis, top lid, and 360° light ring diffuser in [`hardware/cad/`](file:///Users/bill/src/research/systems-programming/indentity-disc-vault/hardware/cad/).
+- **Bill of Materials (BoM)**: Complete prototype BOM (~$15.30 total cost) leveraging the ESP32-S3 (Native USB HID + Crypto), ATECC608B Secure Element, and 16x addressable LEDs in [`hardware/bom/BILL_OF_MATERIALS.md`](file:///Users/bill/src/research/systems-programming/indentity-disc-vault/hardware/bom/BILL_OF_MATERIALS.md).
+- **Presence Verification**: Integrated capacitive touch electrode for FIDO2 User Presence (UP) checks.
+
+---
+
 </div>
 
 ## ⚡ The Problem Statement

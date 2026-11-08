@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-blueprint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050c18" />
+      <stop offset="50%" stop-color="#020710" />
+      <stop offset="100%" stop-color="#010307" />
+    </linearGradient>
+
+    <!-- Neon Glows -->
+    <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="orange-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.12" />
+    </pattern>
+
+    <!-- Materials -->
+    <linearGradient id="mat-case" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a323d" />
+      <stop offset="100%" stop-color="#141920" />
+    </linearGradient>
+
+    <linearGradient id="mat-pcb" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#093a20" />
+      <stop offset="100%" stop-color="#0d522c" />
+    </linearGradient>
+
+    <linearGradient id="mat-diffuser" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#80f3ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00a3cc" stop-opacity="0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Blueprint Canvas -->
+  <rect width="1400" height="900" fill="url(#bg-blueprint)" />
+  <rect width="1400" height="900" fill="url(#grid)" />
+
+  <!-- Frame & Title Header -->
+  <rect x="25" y="25" width="1350" height="850" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.4" />
+  <rect x="35" y="35" width="1330" height="830" fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.2" />
+
+  <!-- Title Block (Engineering Standard) -->
+  <g id="title-block" transform="translate(920, 730)">
+    <rect width="435" height="125" fill="#030914" stroke="#00e5ff" stroke-width="1.5" />
+    <line x1="0" y1="35" x2="435" y2="35" stroke="#00e5ff" stroke-width="0.8" opacity="0.6" />
+    <line x1="0" y1="75" x2="435" y2="75" stroke="#00e5ff" stroke-width="0.8" opacity="0.6" />
+    <line x1="220" y1="35" x2="220" y2="125" stroke="#00e5ff" stroke-width="0.8" opacity="0.6" />
+    
+    <text x="15" y="24" font-family="'SF Pro Display', 'Menlo', monospace" font-size="14" fill="#00e5ff" font-weight="bold" letter-spacing="2">DWG: ID-VAULT-CUTAWAY-REV-1.0</text>
+    <text x="15" y="55" font-family="'SF Pro Display', 'Menlo', monospace" font-size="10" fill="#7fd5ff">SYSTEM: IDENTITY DISC HARDWARE VAULT</text>
+    <text x="15" y="68" font-family="'SF Pro Display', 'Menlo', monospace" font-size="10" fill="#7fd5ff">MCU: ESP32-S3-MINI-1 / NRF52840</text>
+    <text x="235" y="55" font-family="'SF Pro Display', 'Menlo', monospace" font-size="10" fill="#7fd5ff">SCALE: 1.5 : 1 (MILLIMETERS)</text>
+    <text x="235" y="68" font-family="'SF Pro Display', 'Menlo', monospace" font-size="10" fill="#7fd5ff">CAD UNITS: METRIC (ISO)</text>
+    <text x="15" y="98" font-family="'SF Pro Display', 'Menlo', monospace" font-size="10" fill="#00ffaa">STATUS: DFM READY / 3D PRINTABLE</text>
+    <text x="15" y="112" font-family="'SF Pro Display', 'Menlo', monospace" font-size="9" fill="#5a9bbb">ENCLOSURE: PETG / RESIN + DIFFUSER</text>
+    <text x="235" y="105" font-family="'SF Pro Display', 'Menlo', monospace" font-size="11" fill="#00e5ff" font-weight="bold">SHEET 1 OF 1</text>
+  </g>
+
+  <!-- Left: Exploded Cross-Section Diagram -->
+  <g id="exploded-view" transform="translate(80, 80)">
+    <text x="0" y="20" font-family="'SF Pro Display', 'Menlo', monospace" font-size="18" fill="#00e5ff" font-weight="bold" letter-spacing="2">
+      FIGURE 1: STACK-UP &amp; EXPLODED CUT-AWAY (SECTION A-A)
+    </text>
+    <text x="0" y="42" font-family="'SF Pro Display', 'Menlo', monospace" font-size="11" fill="#69a3c9">
+      Cross-sectional elevation showing internal concentric sandwich: Top Cover, Touch Electrode, Annular PCB, Diffuser, and Bottom Chassis.
+    </text>
+
+    <!-- Center Line Indicator -->
+    <line x1="280" y1="70" x2="280" y2="650" stroke="#ff0055" stroke-width="1" stroke-dasharray="12 4 3 4" opacity="0.7" />
+    <text x="285" y="85" font-family="monospace" font-size="9" fill="#ff0055">CL ℄ (CENTRAL AXIS)</text>
+
+    <!-- LAYER 1: TOP BEZEL COVER (Exploded, Z=+180) -->
+    <g transform="translate(0, 100)">
+      <!-- Left half of annular shell -->
+      <path d="M 120 0 L 210 0 C 215 0 215 8 215 8 L 205 18 L 130 18 L 120 8 Z" fill="url(#mat-case)" stroke="#00e5ff" stroke-width="1.5" />
+      <!-- Right half of annular shell -->
+      <path d="M 440 0 L 350 0 C 345 0 345 8 345 8 L 355 18 L 430 18 L 440 8 Z" fill="url(#mat-case)" stroke="#00e5ff" stroke-width="1.5" />
+      <text x="460" y="12" font-family="monospace" font-size="11" fill="#00e5ff">1. TOP BEZEL / CASING (Matte Black PETG / Resin)</text>
+      <text x="460" y="26" font-family="monospace" font-size="9" fill="#69a3c9">Outer Rim: Ø75mm | Inner Aperture: Ø25mm | Thickness: 2.0mm</text>
+    </g>
+
+    <!-- LAYER 2: CAPACITIVE TOUCH SENSOR & ATECC608A (Z=+120) -->
+    <g transform="translate(0, 170)">
+      <!-- Copper Touch Ring Pads -->
+      <rect x="145" y="0" width="50" height="4" fill="#d97706" stroke="#f59e0b" stroke-width="1" filter="url(#orange-glow)" />
+      <rect x="365" y="0" width="50" height="4" fill="#d97706" stroke="#f59e0b" stroke-width="1" filter="url(#orange-glow)" />
+      <line x1="280" y1="2" x2="365" y2="2" stroke="#d97706" stroke-width="0.8" stroke-dasharray="2 2" />
+      <text x="460" y="8" font-family="monospace" font-size="11" fill="#f59e0b">2. CAPACITIVE TOUCH ELECTRODE (User Presence / UP Check)</text>
+      <text x="460" y="22" font-family="monospace" font-size="9" fill="#d97706">Conductive pad or ITO sensor beneath touch-active glyph area</text>
+    </g>
+
+    <!-- LAYER 3: LIGHT DIFFUSER RING (Z=+80) -->
+    <g transform="translate(0, 230)">
+      <!-- Diffuser profile (Translucent frosted PETG / Acrylic) -->
+      <rect x="110" y="0" width="20" height="24" rx="2" fill="url(#mat-diffuser)" stroke="#00f3ff" stroke-width="1.2" filter="url(#cyan-glow)" />
+      <rect x="430" y="0" width="20" height="24" rx="2" fill="url(#mat-diffuser)" stroke="#00f3ff" stroke-width="1.2" filter="url(#cyan-glow)" />
+      <text x="460" y="12" font-family="monospace" font-size="11" fill="#00f3ff">3. 360° NEON DIFFUSER RING (Tron Light Strip)</text>
+      <text x="460" y="26" font-family="monospace" font-size="9" fill="#69a3c9">Frosted translucent PLA/Resin channeling 16x WS2812B LEDs</text>
+    </g>
+
+    <!-- LAYER 4: CUSTOM ANNULAR DONUT PCB (Z=+40) -->
+    <g transform="translate(0, 310)">
+      <!-- PCB cross-section -->
+      <rect x="125" y="0" width="85" height="6" rx="1" fill="url(#mat-pcb)" stroke="#10b981" stroke-width="1.5" />
+      <rect x="350" y="0" width="85" height="6" rx="1" fill="url(#mat-pcb)" stroke="#10b981" stroke-width="1.5" />
+      
+      <!-- Surface-mount MCU & Secure Element -->
+      <rect x="140" y="-8" width="28" height="8" fill="#1e293b" stroke="#94a3b8" stroke-width="0.8" />
+      <text x="143" y="-2" font-family="monospace" font-size="6" fill="#f8fafc">ESP32-S3</text>
+      
+      <rect x="180" y="-6" width="16" height="6" fill="#334155" stroke="#94a3b8" stroke-width="0.8" />
+      <text x="182" y="-1" font-family="monospace" font-size="5" fill="#38bdf8">ATECC</text>
+
+      <!-- Side-emitting Micro Addressable RGB LEDs (WS2812B-2020) -->
+      <rect x="125" y="-5" width="6" height="5" fill="#ffffff" stroke="#00e5ff" stroke-width="1" filter="url(#cyan-glow)" />
+      <rect x="429" y="-5" width="6" height="5" fill="#ffffff" stroke="#00e5ff" stroke-width="1" filter="url(#cyan-glow)" />
+
+      <!-- USB Type-C Receptacle (Mid-Mount) -->
+      <rect x="390" y="-4" width="25" height="8" rx="1" fill="#475569" stroke="#cbd5e1" stroke-width="1" />
+      <text x="393" y="2" font-family="monospace" font-size="6" fill="#ffffff">USB-C</text>
+
+      <text x="460" y="8" font-family="monospace" font-size="11" fill="#10b981">4. 4-LAYER ANNULAR DONUT PCB (1.2mm FR4, ENIG Finish)</text>
+      <text x="460" y="22" font-family="monospace" font-size="9" fill="#6ee7b7">ESP32-S3-MINI-1 (Native USB HID) + ATECC608B Secure Element</text>
+    </g>
+
+    <!-- LAYER 5: BOTTOM CHASSIS & THREADED MOUNTING (Z=0) -->
+    <g transform="translate(0, 390)">
+      <!-- Left base with countersunk screw cavity -->
+      <path d="M 100 0 L 225 0 L 225 15 L 210 25 L 120 25 L 100 15 Z" fill="url(#mat-case)" stroke="#00e5ff" stroke-width="1.5" />
+      <!-- Right base with USB cutout port -->
+      <path d="M 335 0 L 460 0 L 460 15 L 440 25 L 350 25 L 335 15 Z" fill="url(#mat-case)" stroke="#00e5ff" stroke-width="1.5" />
+      
+      <!-- Threaded Heat-set Brass Inserts (M2 x 3mm) -->
+      <rect x="135" y="4" width="6" height="12" fill="#ca8a04" stroke="#eab308" stroke-width="0.8" />
+      <rect x="419" y="4" width="6" height="12" fill="#ca8a04" stroke="#eab308" stroke-width="0.8" />
+
+      <text x="460" y="12" font-family="monospace" font-size="11" fill="#00e5ff">5. LOWER BASE ENCLOSURE (Chassis Tray)</text>
+      <text x="460" y="26" font-family="monospace" font-size="9" fill="#69a3c9">4x M2x4mm Torx screws into brass heat-set inserts. Recessed USB-C jack.</text>
+    </g>
+
+    <!-- ASSEMBLED STATE PREVIEW (LOWER LEFT) -->
+    <g transform="translate(0, 480)">
+      <text x="0" y="25" font-family="monospace" font-size="13" fill="#00e5ff" font-weight="bold">ASSEMBLED SECTION PROFILE:</text>
+      <!-- Complete sandwich joined -->
+      <g transform="translate(100, 45)">
+        <!-- Base -->
+        <rect x="0" y="18" width="360" height="12" fill="#141920" stroke="#00e5ff" stroke-width="1" />
+        <!-- Inner hole cutout simulation -->
+        <rect x="120" y="0" width="120" height="35" fill="#050c18" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4 2" />
+        <!-- PCB -->
+        <rect x="15" y="12" width="95" height="5" fill="#093a20" stroke="#10b981" stroke-width="1" />
+        <rect x="250" y="12" width="95" height="5" fill="#093a20" stroke="#10b981" stroke-width="1" />
+        <!-- Diffuser Ring -->
+        <rect x="5" y="6" width="18" height="15" fill="#00a3cc" opacity="0.8" filter="url(#cyan-glow)" />
+        <rect x="337" y="6" width="18" height="15" fill="#00a3cc" opacity="0.8" filter="url(#cyan-glow)" />
+        <!-- Top Cover -->
+        <rect x="0" y="0" width="360" height="8" fill="#2a323d" stroke="#00e5ff" stroke-width="1" />
+      </g>
+      
+      <!-- Dimension annotations -->
+      <g stroke="#ffffff" stroke-width="0.8" opacity="0.8" font-family="monospace" font-size="9" fill="#ffffff">
+        <!-- Thickness line -->
+        <line x1="80" y1="45" x2="80" y2="75" marker-end="url(#arrow)" />
+        <line x1="75" y1="45" x2="85" y2="45" />
+        <line x1="75" y1="75" x2="85" y2="75" />
+        <text x="35" y="63">11.0 mm</text>
+
+        <!-- Diameter line -->
+        <line x1="100" y1="95" x2="460" y2="95" />
+        <line x1="100" y1="90" x2="100" y2="100" />
+        <line x1="460" y1="90" x2="460" y2="100" />
+        <text x="255" y="112" text-anchor="middle">TOTAL OD: Ø75.0 mm (INNER ID: Ø25.0 mm)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right: Top-Down Plan View (Donut Geometry) -->
+  <g id="top-plan-view" transform="translate(850, 80)">
+    <text x="50" y="20" font-family="'SF Pro Display', 'Menlo', monospace" font-size="18" fill="#00e5ff" font-weight="bold" letter-spacing="2">
+      FIGURE 2: TOP-DOWN CAD PROJECTION
+    </text>
+    <text x="50" y="42" font-family="'SF Pro Display', 'Menlo', monospace" font-size="11" fill="#69a3c9">
+      Orthographic view of annular housing showing component placement.
+    </text>
+
+    <g transform="translate(240, 290)">
+      <!-- Outer Enclosure Circle -->
+      <circle cx="0" cy="0" r="190" fill="#090f18" stroke="#00e5ff" stroke-width="2" />
+      <circle cx="0" cy="0" r="175" fill="#131c26" stroke="#00f3ff" stroke-width="1" stroke-dasharray="4 4" />
+      
+      <!-- Frosted Light Diffuser Ring (Visible from top rim) -->
+      <circle cx="0" cy="0" r="165" fill="none" stroke="#00e5ff" stroke-width="12" opacity="0.6" filter="url(#cyan-glow)" />
+
+      <!-- Annular PCB Outline -->
+      <circle cx="0" cy="0" r="150" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="8 4" />
+      
+      <!-- Microcontroller ESP32-S3 -->
+      <g transform="translate(-70, -70)">
+        <rect width="45" height="45" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+        <text x="5" y="26" font-family="monospace" font-size="8" fill="#f8fafc">ESP32-S3</text>
+      </g>
+
+      <!-- Hardware Secure Element ATECC608A / OPTIGA Trust M -->
+      <g transform="translate(30, -75)">
+        <rect width="25" height="20" fill="#334155" stroke="#f59e0b" stroke-width="1" />
+        <text x="3" y="13" font-family="monospace" font-size="6" fill="#fef08a">SE ATECC</text>
+      </g>
+
+      <!-- 16x NeoPixel LEDs distributed circularly -->
+      <g id="led-ring" fill="#ffffff" stroke="#00e5ff" stroke-width="1" filter="url(#cyan-glow)">
+        <circle cx="0" cy="-165" r="4" />
+        <circle cx="63" cy="-152" r="4" />
+        <circle cx="116" cy="-116" r="4" />
+        <circle cx="152" cy="-63" r="4" />
+        <circle cx="165" cy="0" r="4" />
+        <circle cx="152" cy="63" r="4" />
+        <circle cx="116" cy="116" r="4" />
+        <circle cx="63" cy="152" r="4" />
+        <circle cx="0" cy="165" r="4" />
+        <circle cx="-63" cy="152" r="4" />
+        <circle cx="-116" cy="116" r="4" />
+        <circle cx="-152" cy="63" r="4" />
+        <circle cx="-165" cy="0" r="4" />
+        <circle cx="-152" cy="-63" r="4" />
+        <circle cx="-116" cy="-116" r="4" />
+        <circle cx="-63" cy="-152" r="4" />
+      </g>
+
+      <!-- Capacitive Touch Sensor Ring -->
+      <circle cx="0" cy="0" r="100" fill="none" stroke="#f59e0b" stroke-width="6" stroke-dasharray="20 10" filter="url(#orange-glow)" />
+
+      <!-- Center Hole (The Tron Disc Aperture) -->
+      <circle cx="0" cy="0" r="65" fill="#020710" stroke="#00e5ff" stroke-width="2.5" />
+      
+      <!-- USB Type-C Receptacle Notch at bottom -->
+      <rect x="-16" y="168" width="32" height="24" rx="3" fill="#64748b" stroke="#ffffff" stroke-width="1.2" />
+      <text x="0" y="184" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle">USB-C</text>
+
+      <!-- Center ID Text -->
+      <text x="0" y="-10" font-family="monospace" font-size="9" fill="#00e5ff" text-anchor="middle">APERTURE</text>
+      <text x="0" y="8" font-family="monospace" font-size="8" fill="#69a3c9" text-anchor="middle">Ø 25.0 mm</text>
+      <text x="0" y="24" font-family="monospace" font-size="7" fill="#69a3c9" text-anchor="middle">(LANYARD / CARABINER)</text>
+    </g>
+  </g>
+</svg>
