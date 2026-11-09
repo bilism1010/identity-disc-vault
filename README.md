@@ -17,7 +17,7 @@
 [![Zero-Trust](https://img.shields.io/badge/SECRETS-ZERO%20ON--DISK%20EXPOSURE-00e5ff?style=for-the-badge&labelColor=03060f)](#performance-targets)
 
 <p align="center">
-  <img src="assets/identity-disc.png" alt="Identity Disc Vault Conceptual Visualization" width="480" />
+  <img src="assets/identity_disc.jpg" alt="Identity Disc Vault Prototype Render" width="580" />
 </p>
 
 <p align="center">
@@ -68,7 +68,9 @@ The moment a secret touches disk, your $60 hardware key is rendered useless agai
 We have engineered a realistic, open-source physical realization of the TRON Identity Disc as a 3D-printable FIDO2/WebAuthn PRF hardware security vault:
 
 <p align="center">
-  <img src="assets/technical-cutaway.png" alt="Identity Disc Technical Cutaway Drawing" width="720" />
+  <img src="assets/identity_disc.jpg" alt="Identity Disc Physical Shell Concept" width="460" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/technical-cutaway.png" alt="Identity Disc Technical Cutaway Drawing" width="460" />
 </p>
 
 - **Interactive 3D Models**: Production-ready [`.STL`](file:///Users/bill/src/research/systems-programming/indentity-disc-vault/hardware/cad/identity_disc_assembly.stl) and [`.OBJ`](file:///Users/bill/src/research/systems-programming/indentity-disc-vault/hardware/cad/identity_disc_assembly.obj) files for base chassis, top lid, and 360° light ring diffuser in [`hardware/cad/`](file:///Users/bill/src/research/systems-programming/indentity-disc-vault/hardware/cad/).

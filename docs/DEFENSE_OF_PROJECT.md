@@ -70,6 +70,11 @@ The #1 source of cloud breaches remains static, long-lived AWS IAM access keys (
 
 ### Pillar 5: Physical State Awareness (The 360° LED Telemetry Ring)
 Software secret prompts are notoriously vulnerable to prompt injection, clickjacking, and background credential harvesting.
+
+<p align="center">
+  <img src="../assets/identity_disc.jpg" alt="Identity Disc Physical Shell with Neon Channel" width="460" />
+</p>
+
 - When realized with the 3D-printable Identity Disc hardware, the physical device provides an unambiguous, out-of-band visual state indicator:
   - 🔵 **Cyan Pulse**: Disc armed in zero-trust standby; unsealed memory zeroed.
   - 🟡 **Amber Strobe**: Active process presence challenge; physically requesting authorization for a specific action.

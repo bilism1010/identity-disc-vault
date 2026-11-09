@@ -7,6 +7,10 @@ This document specifies the physical architecture, mechanical stack-up, bill of 
 
 ## 1. System Overview & Physical Specs
 
+<p align="center">
+  <img src="../../assets/identity_disc.jpg" alt="Identity Disc Prototype" width="480" />
+</p>
+
 - **Form Factor**: Annular Tron Identity Disc (pocket/keychain or desktop dock).
 - **Dimensions**:
   - Outer Diameter (OD): **75.0 mm** (convenient hand/palm fit).
