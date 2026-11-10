@@ -15,6 +15,7 @@
 [![Status](https://img.shields.io/badge/STATUS-ACTIVE%20RESEARCH-18a0ff?style=for-the-badge&labelColor=03060f)](https://github.com/bsommers)
 [![Security](https://img.shields.io/badge/AUTHENTICATION-FIDO2%20%7C%20PASSKEY%20%7C%20TPM-00e5ff?style=for-the-badge&labelColor=03060f)](#the-solution)
 [![Zero-Trust](https://img.shields.io/badge/SECRETS-ZERO%20ON--DISK%20EXPOSURE-00e5ff?style=for-the-badge&labelColor=03060f)](#performance-targets)
+[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-00e5ff?style=for-the-badge&labelColor=03060f)](LICENSE)
 
 <p align="center">
   <img src="assets/identity_disc.jpg" alt="Identity Disc Vault Prototype Render" width="580" />
@@ -192,6 +193,15 @@ cargo run -- secret set AWS_SECRET_ACCESS_KEY "AKIAEXAMPLE1234567"
 # 6. Execute command with ephemeral secret injection (prompts for Touch/Passkey)
 cargo run -- exec -- env | grep AWS
 ```
+
+---
+
+## 📄 License & Commercialization
+
+`identity-disc-vault` is licensed under the [Apache License, Version 2.0](LICENSE).
+
+- **Open Source Foundation:** The core CLI, hardware authenticator abstraction layer, zeroization runtime, and local secret vault are open source and permissive for community adoption, auditing, and contribution.
+- **Enterprise & Commercial Extensions:** As original author and copyright holder, commercial licensing, proprietary enterprise plugins (e.g. centralized fleet policy synchronization, centralized audit logging, cloud IAM federation modules, SaaS orchestration), and support agreements can be offered alongside this core open-source distribution.
 
 ---
 
